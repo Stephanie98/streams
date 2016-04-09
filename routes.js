@@ -10,6 +10,9 @@ var Router = {
     
     //Users
     app.get('/users', controllers.Users.index);
+    
+    //About page
+    app.get('/about', controllers.About.index);
    
     }
 };

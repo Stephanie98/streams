@@ -1,6 +1,43 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-    <h1>{{ title}}</h1>
-    <p> Welcome to Stephanie {{ title | escape }}</p>
+<!DOCTYPE html>
+<html>
+
+<body>
+background-image: url("https://s-media-cache-ak0.pinimg.com/736x/44/f3/ed/44f3ed6f2d1f2a6a3fe82ee58a045134.jpg");
+
+
+</body>
+</html>
+ <h1>{{ Homepage}}</h1>
+      <p> Welcome to Stephanie {{ title | escape }}</p>
+    <script type="text/javascript">
+tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();
+if(nyear<1000) nyear+=1900;
+var nhour=d.getHours(),nmin=d.getMinutes(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+"";
+}
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
+<div id="clockbox"></div>
+
+
     {% endblock %}

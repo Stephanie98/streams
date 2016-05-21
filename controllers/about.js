@@ -1,4 +1,4 @@
-// Aout controller 
+// About controller 
 
 var About = {
     
